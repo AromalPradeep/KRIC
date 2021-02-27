@@ -1,0 +1,68 @@
+<base>: 
+	id: Base 
+	rows: 2
+	cols : 1
+	padding: 10
+	spacing: 10
+	#pos_hint: {'top':1}
+	
+	BoxLayout:
+    	orientation: "horizontal"
+    	size_hint: 0.3, 0.1
+    	        	
+    	Button:
+        	id : mini
+        	text: '-'
+        	on_press : root.Minus_app_button()
+        	size_hint: 0.3, 0.1
+        	background_color: 0, 0, 0, 0
+        
+        Button:
+        	id : full
+        	text: '[]'
+        	on_press : root.MaxiMin_app_button()
+        	size_hint: 0.3, 0.1
+        	background_color: 0, 0, 0, 0
+        
+        Button:
+        	id : close
+        	text: 'X'
+        	#on_press : root.kill()
+        	on_press : root.close_app_button()
+	        size_hint: 0.3, 0.1
+	        background_color: 0, 0, 0, 0
+	        
+	GridLayout:
+	
+    	id: Base 
+    	rows: 3
+    	cols : 1
+    	padding: 10
+    	spacing: 10
+
+        Label:
+            id : t2
+            text : 'UWU'
+            #height : 700
+            #width : 100
+            size_hint: 4, 4
+            
+        TextInput: 
+    		id: entry 
+    		hint_text:'Enter text'
+    		font_size: 32
+    		multiline: False
+    		on_text_validate: root.think(entry.text) #t.text = root.think()
+            #height : 100
+            #width : 100
+            size_hint: 2, 2
+        
+        Label:
+            id : output
+            text : 'Hi there, I am KRIC.'
+            #height : 100
+            #width : 100
+            size_hint: 1, 1
+            markup: True
+            
+            #self.root.ids.time.text = strftime('[b]%H[/b]:%M:%S')
