@@ -28,6 +28,7 @@ from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 stop_words = set(stopwords.words('english'))
 from nltk.tokenize import word_tokenize
+from nltk.corpus import wordnet
 
 # Spell Checker
 #from spellchecker import SpellChecker
@@ -42,7 +43,7 @@ def today():
 while True:
     
     # User input
-    i = input('user : ')
+    i = input('user : ').lower()
     
     if i.lower() in ['break','end','quit']:
         break
@@ -63,6 +64,19 @@ while True:
                         # clean sentence
                         words = [k for k in word_tokenize(i) if k not in stop_words]
                         o = words
+                        for i in words:
+                            if i in ['plus','add','addition','positive','summation']:
+                                i = '+' 
+                            elif i in ['minus','negative','subtraction','difference']:
+                                i = '-'
+                            elif i in ['x','multiply','product','times']:
+                                i = '*'
+                            elif i in ['divide','by']:
+                                i = '/' 
+                            elif i in ['power']:
+                                i = '**'
+                            else:
+                                pass
                         
                     except:
                         #raise Exception()

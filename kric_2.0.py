@@ -61,8 +61,8 @@ class base(GridLayout):
     '''def __init__(self):
         pass'''
         
-    #def kill(self):
-    #   exit()
+    def kill(self):
+        pass
         
     def Minus_app_button(self):
         App.get_running_app().root_window.minimize()
@@ -111,7 +111,7 @@ class base(GridLayout):
                             #raise Exception()
                             pass
             except: # if in case of errors
-                o = '<x_x> error...'
+                o = 'x_Random error occured_x'
                     
             # Output
             self.ids.output.text = str(o)
